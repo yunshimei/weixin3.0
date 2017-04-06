@@ -1,0 +1,47 @@
+@import "../variate";
+.content{
+  position: absolute;
+  top: 55px;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  background-color: @color-bg;
+  overflow-y: auto;
+  .main-nav{
+    width: 75px;
+    background-color: #fff;
+    font-size: 14px;
+    overflow-y: auto;
+    li{
+      height: 44px;
+      line-height: 44px;
+      width: 100%;
+      text-align: center;
+    }
+    .active{
+      color: @color-main;
+      background-color: @color-bg;
+    }
+  }
+  .class-nav{
+    overflow-y: auto;
+    li{
+      width: 33.3%;
+      padding-left: @margin;
+      padding-right: @margin;
+      padding-top: @margin;
+      text-align: center;
+    }
+    img{
+      max-width: 100%;
+      border-radius: 5px;
+
+    }
+    p{
+      width: 100%;
+      font-size: @font-size13;
+      color: @color-gary;
+      text-align: center;
+    }
+  }
+}

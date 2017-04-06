@@ -1,0 +1,55 @@
+<div id="order" class="menu">
+  <ul class="order-nav flex text-center">
+    <li class="flex1" ng-class="{'active':status==''}"
+        ng-click="switchOrderStatu('')">
+      <span>全部</span>
+    </li>
+    <li class="flex1" ng-click="switchOrderStatu(1)"
+        ng-class="{'active':status==1}">
+      <span>待确认</span>
+    </li>
+    <li class="flex1" ng-click="switchOrderStatu(2)"
+        ng-class="{'active':status==2}">
+      <span>待发货</span>
+    </li>
+    <li class="flex1" ng-click="switchOrderStatu(3)"
+        ng-class="{'active':status==3}">
+      <span>待收货</span>
+    </li>
+  </ul>
+  <div class="order-main">
+    <div class="order-group" ng-repeat="(index,o) in orderArr">
+      <div class="header flex">
+        <h5 class="flex1 time">下单时间：{{o.created_at}}</h5>
+        <h5 class="text-right order-state">{{o.status | statusFilter}}</h5>
+      </div>
+      <div class="list-box">
+        <div class="item" ng-repeat="g in o.goods">
+          <div class="item-main flex">
+            <img class="item-img" ng-src="{{g.goods_pic}}" alt="">
+            <div class="flex1 item-desc">
+              <h3 class="title">{{g.goods_title}}</h3>
+              <ul class="flex">
+                <li class="flex1 price">{{g.goods_price}}</li>
+                <li class="flex1 text-right num">X{{g.buy_num}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-total text-right">
+        <p class="text">共{{o.buy_count}}件 合计 <span>￥{{o.order_amount}}</span></p>
+        <p class="cancel-btn">
+          <input ng-show="o.status==3"
+                 class="btn-active btn" type="button" value="确认收货"
+                 ng-click="orderOperate(o.id,index,o.status)">
+          <input ng-show="o.status==1"
+                 class="btn-active btn" type="button" value="取消订单"
+                 ng-click="orderOperate(o.id,index,o.status)">
+        </p>
+      </div>
+    </div>
+      </div>
+
+</div>
+<div ng-include=" './tpl/footer/footer.html' "></div>

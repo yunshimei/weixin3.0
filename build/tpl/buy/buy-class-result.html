@@ -1,0 +1,124 @@
+<div class="content">
+  <div ng-if="typeIdArr.length>0" class="subNav">
+    <a class="btn-default"
+       ng-class="{'btn-active' : type_ids[0] == typeIdArr[0]}"
+        ng-click="subClassHandler(typeIdArr[0])">
+      全部
+    </a>
+    <a ng-repeat="data in subTypeList" class="btn-default"
+        ng-class="{'btn-active' : type_ids[0]==data.id}"
+        ng-click="subClassHandler(data.id)">
+      {{data.sort_name}}
+    </a>
+  </div>
+  <div class="sortBar flex">
+    <div class="flex1 default-s active" ng-click="orderHandler(0)">
+      默认
+    </div>
+    <div class="flex1 sale-s" ng-click="orderHandler(2)">
+      销量
+    </div>
+    <div class="flex1 price-s" ng-click="orderHandler(3)">
+      价格
+    </div>
+    <div class="flex1 filtrate" ng-click="filterHandler()">
+      筛选
+    </div>
+  </div>
+  <div class="goodsLists">
+    <div ng-repeat="goods in goodsList" class="item flex"
+         ng-click="goodsInfoHandler(goods.id,'buy-index/buy-class-result/product-detail')">
+      <div class="item-img"><img ng-src="{{goods.pic}}" alt=""></div>
+      <div class="flex1 item-txt">
+        <h3>{{goods.title}}</h3>
+        <p class="price">￥{{goods.price}}</p>
+        <p class="sale">销量：{{goods.sell_num}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="full-pop-bg" ng-show="isShowChosePop">
+  <div class="filter-box">
+    <div class="main">
+      <h1 class="title">筛选</h1>
+      <div class="filter-item">
+        <h4>品牌</h4>
+        <ul class="brand-box flexWarp">
+          <li>
+            <input ng-click="brandHandler(0,'brand_ids')"
+                   ng-class="{'active':brand_ids.length<=0}"
+                   class="brand-btn" type="button" value="全部">
+          </li>
+          <li ng-repeat="b in brands">
+            <input
+              ng-click="brandHandler(b.id,'brand_ids')"
+              ng-class="{'active':brand_ids.indexOf(b.id)!=-1}"
+              class="brand-btn" type="button" value="{{b.brand}}">
+          </li>
+        </ul>
+      </div>
+      <div class="filter-item">
+        <h4>清真</h4>
+        <ul class="flex halal">
+          <li class="flex1">
+            <label class="radio-label flex">
+              <div class="radio-hd">
+                <input ng-model="chose" class="radio" type="radio" value="all">
+                <i ng-class="{'icon-radio-a':halal==-1,'icon-radio':halal!=-1}">
+                </i>
+              </div>
+              <div class="flex1">全部</div>
+            </label>
+          </li>
+          <li class="flex1">
+            <label class="radio-label flex">
+              <div class="radio-hd">
+                <input ng-model="chose" class="radio" type="radio" value="yes">
+                <i ng-class="{'icon-radio-a':halal==true,'icon-radio':halal!=true}"></i>
+              </div>
+              <div class="flex1">是</div>
+            </label>
+          </li>
+          <li class="flex1">
+            <label class="radio-label flex">
+              <div class="radio-hd">
+                <input ng-model="chose" class="radio" type="radio" value="no">
+                <i ng-class="{'icon-radio-a':halal==false,'icon-radio':halal!=false}"></i>
+              </div>
+              <div class="flex1">否</div>
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="filter-item" ng-if="typeIdArr.length>0">
+        <h4>型号</h4>
+        <ul class="brand-box flexWarp">
+          <li>
+            <input ng-click="brandHandler(0,'xinghaos')"
+                   ng-class="{'active':xinghaos.length<=0}"
+                   class="brand-btn" type="button" value="全部">
+          </li>
+          <li ng-repeat="x in xinghaoData">
+            <input
+              ng-click="brandHandler(x,'xinghaos')"
+              ng-class="{'active':xinghaos.indexOf(x)!=-1}"
+              class="brand-btn" type="button" value="{{x}}">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="filter-b flex">
+      <div class="flex1">
+        <input class="cancel-btn"
+               type="button"
+               value="取消"
+               ng-click="closeFilter()">
+      </div>
+      <div class="flex1">
+        <input class="sure-btn" type="button" value="完成"
+        ng-click="finishHandler()">
+      </div>
+    </div>
+  </div>
+</div>
+<div ui-view></div>

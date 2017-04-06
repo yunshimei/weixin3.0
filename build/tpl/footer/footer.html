@@ -1,0 +1,8 @@
+<div id="footer" class="footer flex">
+  <div ng-click="jump('/buy-index')" data-d="{{state}}"
+       ng-class="{'active':state==0}" class="flex1 search">
+    找货
+  </div>
+  <div ng-click="jump('/car')" class="flex1 car" ng-class="{'active':state==1}">进货单</div>
+  <div ng-click="jump('/order')" class="flex1 order" ng-class="{'active':state==2}">订单</div>
+</div>

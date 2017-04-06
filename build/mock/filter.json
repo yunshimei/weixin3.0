@@ -1,0 +1,43 @@
+{
+  "code": 0,
+  "message": "OK",
+  "data": {
+    "halal": [
+      0,
+      1
+    ],
+    "xinghaos": [
+      "10个／袋",
+      "青猪",
+      "调味腌制"
+    ],
+    "markets": [
+      {
+        "pianquId": 2,
+        "pianqu": "海霸王"
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "sort_name": "冻品",
+        "series": 1
+      },
+      {
+        "id": 948,
+        "sort_name": "素制品",
+        "series": 4
+      }
+    ],
+    "brands": [
+      {
+        "id": 5,
+        "brand": "太合"
+      },
+      {
+        "id": 10,
+        "brand": "九联"
+      }
+    ]
+  }
+}

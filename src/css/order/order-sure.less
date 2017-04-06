@@ -1,0 +1,66 @@
+.order-bd{
+  background-color: @color-bg;
+  overflow-y: auto;
+  .addr-bar{
+    background-color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .addr-bar:after{
+    content: '';
+    height: 4px;
+    background-image: url("/weixin3.0/build/img/deco.jpg");
+    width: 100%;
+    display: block;
+  }
+  .addr-icon{
+    font-family: iconfont;
+    line-height: 83px;
+    padding-right: 10px;
+    padding-left: 15px;
+  }
+  .take-info:before{
+    content: '\e744';
+    .addr-icon;
+    font-size: 23px;
+  }
+  .take-info:after{
+    content: '\e611';
+    .addr-icon;
+  }
+  .take-info{
+    ul{
+      padding-top: 10px;
+    }
+  }
+  .addr{
+    line-height: 18px;
+    padding: 10px 0;
+  }
+  .sub-bar{
+    margin-top: 10px;
+    background-color: #fff;
+    padding: @margin;
+    .init{
+      font-size: 11px;
+      color: @color-gary;
+      padding-top: 10px;
+    }
+  }
+  .dist-mode:after{
+    content: '\e611';
+    font-family: iconfont;
+    padding-left: 5px;
+  }
+}
+
+.order-footer{
+  .p-bottom;
+  background-color: #fff;
+  height: 50px;
+  z-index: 200;
+}
+.order-footer:before{
+  content: '';
+  .borderSingle;
+}

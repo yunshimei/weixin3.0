@@ -1,0 +1,32 @@
+<div id="buy-header" class="buy-header flex">
+  <div class="flex1 searchBox">
+    <form action="">
+      <input ng-model="keyWords" ng-focus="searchState(false)" ng-blur="searchState(true)" class="searchInput" type="text" placeholder="点此输入要找的货">
+    </form>
+  </div>
+  <div ng-hide="isShow" class="search-btn" ng-click="searchHandler()">
+    搜索
+  </div>
+</div>
+<div class="content flex">
+  <ul ng-click="typeLeftHandler($event)" class="main-nav">
+    <li ng-repeat="type in leftTypeArr"
+        ng-class="{'active':type.type_id==leftState}"
+        ng-click="leftHandler(type.type_id)">
+      {{type.type_name}}
+    </li>
+  </ul>
+  <div class="class-nav flex1">
+    <ul class="flexWarp">
+      <li ng-repeat="subType in rightTypeArr"
+          ng-click="classHandler(subType.type_id)"
+          ng-if="subType.type_id">
+        <img ng-src="{{subType.type_pic_url}}" alt="">
+        <p>{{subType.type_name}}</p>
+      </li>
+    </ul>
+  </div>
+</div>
+<div ui-view=""></div>
+<div ng-include=" './tpl/footer/footer.html' "></div>
+<div ng-hide="isShow" ng-include=" './tpl/buy/buy-defalut-search.html' "></div>

@@ -1,0 +1,154 @@
+.product-banner{
+  height: 230px;
+  background-color: #d1d1d1;
+  position: relative;
+  .switch:before{
+    content: '\e660';
+    font-family: iconfont;
+    font-size: 20px;
+    color: #79797b;
+    position: absolute;
+    top: @margin;
+    left: @margin;
+  }
+  .banner-img{
+    white-space: nowrap;
+    font-size: 0;
+    overflow: hidden;
+    height: 230px;
+  }
+  .banner-img li{
+    display: inline;
+    width: 100%;
+    height: 100%;
+    img{
+      width: 100%;
+    }
+  }
+  .img-ctrl{
+    position: absolute;
+    bottom: @margin;
+    left: 50%;
+    margin-left: -20px;
+    li{
+      float: left;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: #fff;
+      margin-left: 5px;
+    }
+    .active{
+      background-color: @color-main;
+    }
+  }
+  .selled{
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    width: 80px;
+    height: 20px;
+    background-image: url("/weixin3.0/build/img/selled-bg.png");
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+  }
+}
+.product-title{
+  padding: 0 @margin 25px @margin;
+  background-color: #fff;
+  .price{
+    font-size: 20px;
+    font-weight: bold;
+    color: @color-main;
+    line-height: 50px;
+  }
+}
+.product-desc{
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 0 @margin;
+  .nav{
+    position: relative;
+    padding-top: 16px;
+    padding-bottom: 8px;
+    font-size: @font-size15;
+    .active{
+      span{
+        color: @color-main;
+        border-bottom: 2px solid @color-main;
+        padding-bottom: 6px;
+      }
+    }
+  }
+  .nav:after{
+    content: '';
+    .borderSingle;
+    position: absolute;
+    bottom: 0;
+  }
+  .introduce{
+
+  }
+  .stand{
+    font-size: 14px;
+    padding-top: @margin;
+    li{
+      padding-bottom: @margin;
+    }
+    .stand-hd{
+      width: 100px;
+    }
+    .stand-bd{
+      color: @color-gary;
+    }
+  }
+  .txt{
+    line-height: 20px;
+    padding: @margin 0;
+    position: relative;
+  }
+  .txt:after{
+    content: '';
+    .borderSingle;
+    position: absolute;
+    bottom: 0;
+  }
+  .desc-title{
+    padding: 16px 0 8px 0;
+  }
+  .desc-main{
+    width: 100%;
+    //background-color: #d1d1d1;
+    li{
+      width: 100%;
+      margin-top: 8px;
+      img{
+        max-width: 100%;
+      }
+    }
+  }
+}
+.detail-footer{
+  .consult,.car{
+    text-align: center;
+    font-size: 11px;
+    padding-top: 8px;
+  }
+  .consult:before{
+    content: '\e741';
+    .footerIcon;
+  }
+  .car:before{
+    content: '\e62a';
+    .footerIcon;
+  }
+  .add-car{
+    width: 100%;
+    height: 50px;
+    background-color: @color-main;
+    color: #fff;
+    font-size: 17px;
+  }
+
+}

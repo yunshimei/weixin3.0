@@ -1,0 +1,186 @@
+@import "variate";
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: @font-family;
+  background-color: @color-bg;
+  color: @color-default;
+}
+body, html {
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+img{
+  border: 0;
+}
+a,a:hover{
+  text-decoration: none;
+  color: @color-default;
+}
+ul,li,ol{
+  list-style: none;
+}
+input,button,textarea,select{
+  background-color: transparent;
+  border: none;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: normal;
+}
+h1{font-size: @font-size17;}
+h2{font-size: @font-size16;}
+h3{font-size: @font-size15;}
+h4{font-size: @font-size14;}
+h5{font-size: @font-size13;}
+h6{font-size: @font-size12;}
+
+//布局
+.flex{
+  display: flex;
+  display: -webkit-flex;
+}
+.flex1{
+  -webkit-flex:1;
+  flex:1;
+}
+.flexWarp{
+  display: flex;
+  display: -webkit-flex;
+  -webkit-flex-wrap:wrap;
+  flex-wrap:wrap;
+}
+
+
+
+//图标字体
+@font-face {
+  font-family: 'iconfont';  /* project id 265337 */
+  src: url('//at.alicdn.com/t/font_b5kp9ahv1j5j0pb9.eot');
+  src: url('//at.alicdn.com/t/font_b5kp9ahv1j5j0pb9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_b5kp9ahv1j5j0pb9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_b5kp9ahv1j5j0pb9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_b5kp9ahv1j5j0pb9.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+}
+.rightIcon{
+  font-family: iconfont;
+  padding-left: 3px;
+}
+
+//按钮
+.btn{
+  border-radius: 5px;
+  padding:8px 15px;
+  font-size: @font-size13;
+  margin-right: 10px;
+}
+.btn-default{
+  .btn;
+  border:1px solid @border-color;
+  color: @color-default;
+}
+.btn-active{
+  border: 1px solid @color-main;
+  color: @color-main;
+}
+
+//定位
+
+.p-top{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.p-bottom{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
+
+//边框样式
+.borderSingle{
+  height: 1px;
+  background-color: @border-color;
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transform: scaleY(0.5);
+  -moz-transform: scaleY(0.5);
+  -ms-transform: scaleY(0.5);
+  -o-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+//对齐方式
+.text-left{
+  text-align: left;
+}
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+
+//下拉列表框样式
+.selectStyle{
+  font-size: @font-size15;
+  color: @color-default;
+  border: none;
+  background-color: transparent;
+  appearance: none;
+}
+
+
+//页面底部
+.footer{
+  height: 50px;
+  font-size: @font-size13;
+  background-color: @color-footer-bg;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  .search,.car,.order{
+    padding-top: 8px;
+  }
+  .search:before{
+    content: '\e634';
+    .footerIcon;
+  }
+  .car:before{
+    content: '\e62a';
+    .footerIcon;
+  }
+  .order:before{
+    content: '\e613';
+    .footerIcon;
+  }
+  .active{
+    color: @color-main;
+  }
+}
+.footerIcon{
+  font-family: iconfont;
+  display: block;
+  font-size: 21px;
+}
+.footer:before{
+  content: '';
+  .borderSingle;
+}
+
+
+

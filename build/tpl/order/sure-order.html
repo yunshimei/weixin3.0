@@ -1,0 +1,75 @@
+<div class="menu order-bd">
+  <div class="addr-bar">
+    <div class="take-info flex">
+      <div class="flex1">
+        <ul class="flex">
+          <li class="flex1"><h3><span class="hint">收货人：</span>{{defaltAddr.receiver}}</h3></li>
+          <li class="text-center"><h5>{{defaltAddr.mobile}}</h5></li>
+        </ul>
+        <h5 class="flex addr">
+          <p><span class="hint">收货地址：</span></p>
+          <p class="flex1">{{defaltAddr.intact_address}}</p>
+        </h5>
+      </div>
+    </div>
+  </div>
+  <div class="list-box">
+    <div class="item" ng-repeat="order in orderArrs">
+      <div class="item-main flex">
+        <img class="item-img" ng-src="{{order.image}}" alt="">
+        <div class="flex1 item-desc">
+          <h3 class="title">{{order.goods_title}}</h3>
+          <ul class="flex">
+            <li class="flex1 price">￥{{order.goods_price}}</li>
+            <li class="flex1 text-right num">X{{order.buy_num}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sub-bar flex">
+    <h3 class="flex1">支付方式</h3>
+    <!--<h3 class="flex1 text-right">-->
+      <!--<select ng-model="payMethd" class="selectStyle">-->
+        <!--<option value="" ng-repeat="pay in payments">{{pay.pay_name}}</option>-->
+      <!--</select>-->
+    <select class="selectStyle" ng-model="payMethd"
+            ng-options="pay.pay_name for pay in payments">
+    </select>
+    <!--</h3>-->
+  </div>
+  <div class="sub-bar">
+    <div class="flex">
+      <h3 class="flex1">配送方式</h3>
+      <h3 class="flex1 text-right dist-mode">
+        <!--<select ng-model="selDelivery"  class="selectStyle">-->
+          <!--<option value=""-->
+                  <!--ng-repeat="(key,d) in deliver">-->
+            <!--{{d}}-->
+          <!--</option>-->
+        <!--</select>-->
+        <select class="selectStyle" ng-model="selDelivery"
+                ng-options="del for del in deliver">
+
+        </select>
+      </h3>
+    </div>
+    <p class="init">(具体配送时间请联系“简阳冷二娃冷冻食品” 18946738728)</p>
+  </div>
+</div>
+<div class="order-footer">
+  <div class="account-bar flex">
+    <h3 class="flex1 account-left-m">
+      <div class="flex">
+        <div class="flex1 acco-stat">
+          <p><span>合计</span><i class="price">￥{{goodsPrice.total_amount}}</i></p>
+          <p><span>共{{goodsPrice.goods_count}}件</span></p>
+        </div>
+      </div>
+
+    </h3>
+    <div>
+      <input class="account-btn" type="button" value="提交" ng-click="createOrder()">
+    </div>
+  </div>
+</div>

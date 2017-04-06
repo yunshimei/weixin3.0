@@ -1,0 +1,110 @@
+<div id="car" class="menu">
+  <div class="car-main">
+    <div class="list-box">
+      <div class="check-title flex">
+        <h3 class="flex1">
+          <label class="flex check-cont">
+            <div>
+              <input class="former-check" type="checkbox"
+                     ng-click="allChoseHandler('vaildGoods')"
+                     ng-model="selectAll">
+              <i ng-class="{'check-icon-a':vaildGoodsLists.length==validGoodsArr.length,
+                            'check-icon':vaildGoodsLists.length!=validGoodsArr.length}">
+              </i>
+            </div>
+            <div class="check-txt flex1" ng-click="">全选</div>
+          </label>
+        </h3>
+        <h3 class="flex1 text-right">编辑</h3>
+      </div>
+      <div class="item" ng-repeat="(index,v) in validGoodsArr">
+        <div class="item-main flex">
+          <div class="item-check">
+            <label class="flex item-check-icon check-cont" ng-click="goodsChoseHandeler(v.goods_id,'validGoods')">
+              <span>
+                <!--<input class="former-check" type="checkbox"-->
+                        <!--ng-checked="selectAll">-->
+                <i
+                   ng-class="{'check-icon-a':vaildGoodsLists.indexOf(v.goods_id)>=0,'check-icon':vaildGoodsLists.indexOf(v.goods_id)<0}">
+                </i>
+              </span>
+            </label>
+          </div>
+          <img class="item-img" ng-src="{{v.image}}" alt="">
+          <div class="flex1 item-desc">
+            <h3 class="title">{{v.goods_title}}</h3>
+            <ul class="flex">
+              <li class="flex1 price">￥{{v.goods_price}}</li>
+              <li class="flex1 text-right num">X{{v.buy_num}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="invaild-goods">
+      <div ng-if="invalidGoodsArr.length>0" class="check-title flex">
+        <h3 class="flex1">
+          <label class="flex check-cont">
+            <div>
+              <input class="former-check" type="checkbox"  ng-click="allChoseHandler('invalidGood')">
+              <i ng-class="{'check-icon-a':invalidGoodLists.length==invalidGoodsArr.length,
+                            'check-icon':invalidGoodLists.length!=invalidGoodsArr.length}">
+              </i>
+            </div>
+            <div class="check-txt flex1">无效商品</div>
+          </label>
+        </h3>
+        <h3 class="flex1 text-right del-icon" ng-click="delAllinvaldGoods()">
+          共{{invalidGoodsArr.length}}件
+        </h3>
+      </div>
+      <ul>
+        <li class="list" ng-repeat="v in invalidGoodsArr">
+          <div class="flex">
+            <h3 class="flex1">
+              <label class="flex check-cont">
+                <div>
+                  <input class="former-check" type="checkbox">
+                  <i class="check-icon"
+                     ng-click="goodsChoseHandeler(v.goods_id,'invalidGood')"
+                     ng-class="{'check-icon-a':invalidGoodLists.indexOf(v.goods_id)>=0,
+                                'check-icon':invalidGoodLists.indexOf(v.goods_id)<0}">
+                  </i>
+                </div>
+                <div class="check-txt flex1 gary-txt">{{v.goods_title}}(暂无货)</div>
+              </label>
+            </h3>
+            <p class="del-icon" ng-click="delSingleInvaldGoods(v.goods_id)"></p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="account-bar flex">
+      <h3 class="flex1 account-left-m">
+        <div class="flex">
+          <label class="check-cont">
+            <span>
+              <input class="former-check" type="checkbox" ng-click="allChoseHandler(allChose)">
+              <i ng-class="{'check-icon-a':vaildGoodsLists.length==validGoodsArr.length,
+                            'check-icon':vaildGoodsLists.length!=validGoodsArr.length}">
+              </i>
+            </span>
+            <span class="check-txt flex1">全选</span>
+          </label>
+          <div class="flex1 acco-stat">
+            <p><span>合计</span><i class="price">￥{{goodsPrice.total_amount}}</i></p>
+            <p><span>共{{goodsPrice.goods_count}}件</span></p>
+          </div>
+        </div>
+
+      </h3>
+      <div>
+        <input ng-click="jumpSureOrder('car/sure-order')"
+               class="account-btn" type="button" value="去结算"
+               ng-disabled="vaildGoodsLists.length<=0">
+      </div>
+  </div>
+</div>
+<div ng-include=" './tpl/footer/footer.html' "></div>
+<div ui-view></div>

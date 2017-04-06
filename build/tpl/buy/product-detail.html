@@ -1,0 +1,85 @@
+<div class="menu order-bd">
+  <div class="product-banner">
+    <ul class="banner-img">
+      <li ng-repeat="p in goods_picture">
+        <img ng-src="{{p.goods_image}}" alt="">
+      </li>
+    </ul>
+    <span class="switch"></span>
+    <ul class="img-ctrl">
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <div class="selled">
+      <h6>已售：{{goodsInfo.goods_sell_num}}</h6>
+    </div>
+  </div>
+  <div class="product-title">
+    <p class="price">￥{{goodsInfo.goods_price}}/件</p>
+    <h5>{{goodsInfo.goods_title}}</h5>
+  </div>
+  <div class="product-desc">
+    <ul class="nav flex">
+      <li class="flex1 text-center"
+          ng-click="detailSwitch(0)"
+          ng-class="{'active':navSwitch}">
+        <span>商品介绍</span>
+      </li>
+      <li class="flex1 text-center"
+          ng-click="detailSwitch(1)"
+          ng-class="{'active':!navSwitch}">
+        <span>型号规格</span>
+      </li>
+    </ul>
+    <div ng-show="navSwitch" class="introduce">
+      <h5 class="txt">{{goodsInfo.goods_description}}</h5>
+      <h3 class="desc-title">检验报告</h3>
+      <ul class="desc-main">
+        <li><img ng-src="{{goodsInfo.inspection_report}}" alt=""></li>
+      </ul>
+      <h3 class="desc-title">商品图片</h3>
+      <ul class="desc-main">
+        <li ng-repeat="p in goods_picture"><img ng-src="{{p.goods_image}}" alt=""></li>
+      </ul>
+    </div>
+    <ul ng-hide="navSwitch" class="stand">
+      <li class="flex">
+        <p class="stand-hd">品名</p>
+        <p class="flex1 stand-bd">{{goodsInfo.goods_name}}</p>
+      </li>
+      <li class="flex">
+        <p class="stand-hd">品牌</p>
+        <p class="flex1 stand-bd">{{goodsInfo.goods_brand}}</p>
+      </li>
+      <li class="flex">
+        <p class="stand-hd">产地</p>
+        <p class="flex1 stand-bd">{{goodsInfo.goods_origin}}</p>
+      </li>
+      <li class="flex">
+        <p class="stand-hd">型号</p>
+        <p class="flex1 stand-bd">{{goodsInfo.goods_guigei}}</p>
+      </li>
+      <li class="flex">
+        <p class="stand-hd">带箱重量</p>
+        <p class="flex1 stand-bd">{{goodsInfo.goods_rough_weight}}公斤</p>
+      </li>
+      <li class="flex">
+        <p class="stand-hd">去箱重量</p>
+        <p class="flex1 stand-bd">{{goodsInfo.goods_net_weight}}公斤</p>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="order-footer detail-footer flex">
+  <div class="flex1 consult">咨询</div>
+  <div class="flex1 car" ng-click="jump('/car')">
+    进货单
+  </div>
+  <div class="flex1">
+    <input class="add-car" type="button" value="加入进货单" ng-click="addCar()">
+  </div>
+</div>
+
+

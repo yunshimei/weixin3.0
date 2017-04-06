@@ -1,0 +1,104 @@
+.full-pop-bg{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 100;
+  .filter-box{
+    position: absolute;
+    bottom: 0;
+    top: 220px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    .main{
+      position: absolute;
+      .p-top;
+      bottom: 50px;
+      padding: 0 @margin;
+      overflow-y: auto;
+    }
+    .title{
+      height: 48px;
+      line-height: 48px;
+      text-align: center;
+      position: relative;
+      margin-bottom: 15px;
+    }
+    .title:after{
+      content: '';
+      .borderSingle;
+      bottom: 0;
+    }
+    .filter-item{
+      h4{
+        padding: 0 0 15px 8px;
+      }
+      .halal{
+        margin-bottom: 15px;
+      }
+    }
+    .brand-box li{
+      width: 33.3%;
+    }
+    .brand-box .active{
+      border-color: @color-main;
+      color: @color-main;
+    }
+    .brand-btn{
+      width: 80%;
+      .btn-default;
+      margin-bottom: 15px;
+    }
+    .brand-box{
+      .brand-btn{
+        padding: 8px 0px;
+      }
+    }
+    .radio-hd{
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+    .radio-label{
+      position: relative;
+      font-size: @font-size13;
+    }
+    .radio{
+      position: absolute;
+      left: -9999px;
+    }
+    .icon-radio-a:before{
+      content: '\e65e';
+      font-family: iconfont;
+      font-style: normal;
+      font-size: @font-size15;
+      color: @color-main;
+    }
+    .icon-radio:before{
+      content: '\e682';
+      font-family: iconfont;
+      font-style: normal;
+      font-size: @font-size15;
+    }
+    .filter-b{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+    .cancel-btn{
+      width: 100%;
+      height: 50px;
+      background-color: @color-bg;
+      font-size: @font-size17;
+    }
+    .sure-btn{
+      width: 100%;
+      height: 50px;
+      background-color: @color-main;
+      font-size: @font-size17;
+      color: #fff;
+    }
+  }
+}

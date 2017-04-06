@@ -1,0 +1,51 @@
+{
+  "code": 0,
+  "message": "OK",
+  "data": {
+    "1": {
+      "2": {
+        "4": {
+          "type_id": 4,
+          "type_name": "鸡胸",
+          "type_pic_url": "img/img01.jpg"
+        },
+        "172": {
+          "type_id": 172,
+          "type_name": "鸭腿",
+          "type_pic_url": "img/img01.jpg"
+        },
+        "173": {
+          "type_id": 173,
+          "type_name": "鸭胗",
+          "type_pic_url": "img/img01.jpg"
+        },
+        "type_id": 2,
+        "type_name": "鸭副",
+        "type_pic_url": ""
+      },
+      "3": {
+        "4": {
+          "type_id": 4,
+          "type_name": "兔子",
+          "type_pic_url": "img/img01.jpg"
+        },
+        "172": {
+          "type_id": 172,
+          "type_name": "兔头",
+          "type_pic_url": "img/img01.jpg"
+        },
+        "173": {
+          "type_id": 173,
+          "type_name": "海带",
+          "type_pic_url": "img/img01.jpg"
+        },
+        "type_id": 3,
+        "type_name": "鸡副",
+        "type_pic_url": ""
+      },
+      "type_id": 1,
+      "type_name": "冻品",
+      "type_pic_url": ""
+    }
+  }
+}

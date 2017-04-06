@@ -1,0 +1,29 @@
+{
+  "code": 0,
+  "message": "OK",
+  "data": {
+    "main_address_id": 24,
+    "addresses": [
+      {
+        "address": "写代码那个卡卡头",
+        "intact_address": "北京市西城区写代码那个卡卡头",
+        "receiver": "代码鸡",
+        "mobile": "13262987416",
+        "id": 24,
+        "province_id": 110000,
+        "city_id": 110102,
+        "county_id": null
+      },
+      {
+        "address": "写代码那个广场",
+        "intact_address": "北京市东城区写代码那个广场",
+        "receiver": "永生",
+        "mobile": "13262987416",
+        "id": 23,
+        "province_id": 110000,
+        "city_id": 110101,
+        "county_id": null
+      }
+    ]
+  }
+}
